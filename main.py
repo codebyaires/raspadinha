@@ -1,5 +1,3 @@
-# MUDANÇA: Remove 'import random' (não é mais usado diretamente aqui)
-# MUDANÇA: Importa as funções dos seus outros arquivos
 from financas import insert_coin, descontar_valor
 from jogo_raspadinha import gerar_raspadinha, calcular_premio
 
@@ -10,13 +8,13 @@ derrotas_consecutivas = 0
 simbolos = ["⭐", "🍀", "💎"] 
 
 def main():
-    # MUDANÇA: 'main' agora também controla 'derrotas_consecutivas'
+    #'main' controla 'derrotas_consecutivas'
     global saldo, derrotas_consecutivas 
     
     saldo = 0.0  # saldo inicial do jogador
     valor_aposta = 10.0  # custo fixo da raspadinha
     
-    # MUDANÇA: Pede um depósito inicial antes de começar o loop
+    # Pede um depósito inicial antes de começar o loop
     print("--- Bem-vindo ao Jogo da Raspadinha! ---")
     saldo = insert_coin(saldo)
 
@@ -28,7 +26,7 @@ def main():
             print(f"👋 Obrigado por jogar! Seu saldo final: R$ {saldo:.2f}")
             break
 
-        # MUDANÇA: Chama 'gerar_raspadinha' passando os argumentos necessários
+        # Chama 'gerar_raspadinha' passando os argumentos necessários
         # Recebe 2 valores: os resultados e um contador (que vamos ignorar)
         # Usamos '_' para a variável que não vamos usar (o contador de derrotas)
         resultados, _ = gerar_raspadinha(simbolos, derrotas_consecutivas, saldo)
@@ -44,11 +42,11 @@ def main():
             break
 
         if resposta == 's':
-            # MUDANÇA: Chama 'descontar_valor' passando o saldo e a aposta
+            # Chama 'descontar_valor' passando o saldo e a aposta
             # Recebe 2 valores: o novo saldo e um booleano 'pode_jogar'
             saldo, pode_jogar = descontar_valor(saldo, valor_aposta)
             
-            # MUDANÇA: Verifica o booleano 'pode_jogar'
+            # Verifica o booleano 'pode_jogar'
             if not pode_jogar:
                 print("Voltando ao menu principal.")
                 # 'continue' pula para a próxima iteração do loop 'while True'
@@ -58,7 +56,7 @@ def main():
             print("🎉 Resultado da raspadinha:")
             print(f"[ {resultados[0]} ] [ {resultados[1]} ] [ {resultados[2]} ]")
             
-            # Chama 'calcular_premio' (esta chamada já estava correta)
+            # Chama 'calcular_premio'
             ganho = calcular_premio(resultados)
             
             if ganho > 0:
@@ -66,14 +64,13 @@ def main():
                 print(f"➡ Você ganhou R${ganho:.2f}!")
                 print(f"Saldo atual R${saldo:.2f}")
                 
-                # MUDANÇA: 'main' agora é responsável por zerar as derrotas
+                # MAIN agora é responsável por zerar as derrotas
                 derrotas_consecutivas = 0
             else:
                 print("➡ Nada :(")
                 
-                # MUDANÇA: 'main' agora é responsável por incrementar as derrotas
+                # MAIN agora é responsável por incrementar as derrotas
                 derrotas_consecutivas += 1
-                print(f"(Derrotas consecutivas: {derrotas_consecutivas})")
         else:
             print("Raspadinha não raspada.")
             
