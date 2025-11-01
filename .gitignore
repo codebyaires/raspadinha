@@ -1,0 +1,7 @@
+# Pastas de cache e bytecode do Python
+__pycache__/
+*.pyc
+
+# Ambientes virtuais (se você usar no futuro)
+venv/
+.venv/
