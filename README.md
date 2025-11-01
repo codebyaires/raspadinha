@@ -3,7 +3,7 @@
 
 ## Clone o repositório:
 
-`git clone https://github.com/ruivocodespace/raspadinha.git`
+`git clone https://github.com/codebyaires/raspadinha.git`
 
 `cd raspadinha`
 
