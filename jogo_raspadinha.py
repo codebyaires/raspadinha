@@ -19,3 +19,15 @@ def gerar_raspadinha():
     print("========================\n")
 
     return numeros
+
+def calcular_premio(resultados):
+    global derrotas_consecutivas
+    premios = {"🍀": 10, "⭐": 50, "💎": 80}
+
+    if resultados[0] == resultados[1] == resultados[2]:
+        derrotas_consecutivas = 0  #ganhou → reseta
+        return premios[resultados[0]]
+
+    #perdeu → incrementa
+    derrotas_consecutivas += 1
+    return 0
