@@ -2,7 +2,7 @@ import random
 
 def gerar_raspadinha(simbolos, derrotas_consecutivas, saldo):
    
-    if derrotas_consecutivas >= 5:
+    if derrotas_consecutivas >= 6:
         n = random.choice(["⭐", "🍀", "💎"]) 
         numeros = [n, n, n]
         derrotas_consecutivas = 0  # Zera a cópia local do contador
