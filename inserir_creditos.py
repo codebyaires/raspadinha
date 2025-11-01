@@ -1,1 +1,0 @@
-def insert_coin(saldo): 

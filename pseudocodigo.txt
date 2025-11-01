@@ -1,0 +1,13 @@
+Requisitos
+>upar no git
+>mostrar créditos 
+>opção de inserir créditos
+>3 raspadas
+>4 derrotas e 1 vitória
+>funções: 
+    print(rasp)(vão ser 3 quadrados) + (credito atual), 
+    inserir_credito(check), 
+    funcao_resultado(gera numeros aleatorios)
+    descontar_valor, 
+    checkwin (check)
+>variavel do valor apostado
